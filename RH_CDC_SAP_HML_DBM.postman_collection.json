@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "6b734843-51a6-40f7-961c-b3c1977f6a3c",
+		"name": "RH_CDC_SAP_HML_DBM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Token HML",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "cea244a0-a8b9-495c-a155-2b3dacd175af",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "2cc465e9-d9a0-460e-8a01-73ad3eaa8880",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://apihml.portoseguro.com.br/rh/autenticacao/v1/login",
+							"protocol": "https",
+							"host": [
+								"apihml",
+								"portoseguro",
+								"com",
+								"br"
+							],
+							"path": [
+								"rh",
+								"autenticacao",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Preferences_Gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a94ee1c1-fc4b-4622-b725-97cfc149b289",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"cpf\": \"250.223.848-09\",\n\"preferences\": [\n\t{\n\t  \"prefId\" : \"marketingOptInFlag\",\n\t \"value\": \"false\"\n\t }\n]\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apihml.portoseguro.com.br/rh/v1/atualizacao/dbm/250.223.848-09",
+					"protocol": "https",
+					"host": [
+						"apihml",
+						"portoseguro",
+						"com",
+						"br"
+					],
+					"path": [
+						"rh",
+						"v1",
+						"atualizacao",
+						"dbm",
+						"250.223.848-09"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
