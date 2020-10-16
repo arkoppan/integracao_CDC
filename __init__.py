@@ -25,11 +25,7 @@ def integracao_cdc(cpf, cpfInt, tokenType, token):
         """
 
         # Informações de Conexão
-        server = 'sdw-bigdata.database.windows.net'
-        database = 'swd-bigdata'
-        username = 'usr_select'
-        password = '123@Mudar!@#'
-        stringConn = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password
+	## deleting the lines of code 29 to 33 here per customer request (Porto Seguro) as password is exposed 
 
         # Conecta no Banco de Dados
         conn = pyodbc.connect(stringConn)
@@ -233,12 +229,8 @@ def principal():
     payloadLogin = {'client_id': "", "client_secret": "", "grant_type": "client_credentials"}
 
     # Informações de Conexão
-    server = 'sdw-bigdata.database.windows.net'
-    database = 'swd-bigdata'
-    username = 'usr_select'
-    password = '123@Mudar!@#'
-    stringConn = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password
-
+##deleting the lines of code 236 to  240 here per customer request (Porto Seguro) as password is exposed 
+ 
     try:
         # Conecta no Banco de Dados
         conn = pyodbc.connect(stringConn)
